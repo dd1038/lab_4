@@ -49,14 +49,14 @@ begin
 
     if(rising_edge(clk)) then
         if(en = '1') then
-            if( unsigned(hcounter) < 800) then
+            if( unsigned(hcounter) < 799) then
                 hcounter <= std_logic_vector(unsigned(hcounter) + 1);
-            elsif (unsigned(hcounter) = 800)then
+            elsif (unsigned(hcounter) = 799)then
                 hcounter <= (others => '0');
             end if;
-            if (unsigned(hcounter) = 0) and (unsigned(vcounter) < 525) then
+            if (unsigned(hcounter) = 0) and (unsigned(vcounter) < 524) then
                 vcounter<= std_logic_vector(unsigned(vcounter) + 1);
-            elsif (unsigned(vcounter) = 525) then
+            elsif (unsigned(vcounter) = 524) then
                 vcounter <= (others => '0');
             end if;
         end if;
